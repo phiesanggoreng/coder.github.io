@@ -6,6 +6,7 @@ html, body{
     margin:0;
 }
 
+
 h1 {
     font-weight: 700;
     font-size: 48px;
@@ -46,6 +47,9 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 16px 128px;
+    position: sticky;
+    top:0;
+    background-color:white;
 }
 
 #header h1 {
