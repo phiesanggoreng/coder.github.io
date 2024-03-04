@@ -74,6 +74,9 @@ section {
 nav>a {
     margin-left: 12px;
 }
+nav>a:hover{
+    color: #FFC108;
+}
 
 #about {
     display: flex;
@@ -111,6 +114,20 @@ nav>a {
     align-items: center;
     justify-content: space-between;
 }
+.service-header h1{
+    position:relative;
+}
+.service-header h1::before{
+    content: " ";
+    width:60px;
+    height:60px;
+    background: url(./images/accent1.svg);
+    position:absolute;
+    left: -20px;
+    top:-10px;
+    z-index: -1;
+
+}
 
 .service-detail {
     display: grid;
@@ -122,11 +139,19 @@ nav>a {
 .service-detail-item {
     box-shadow: 2px 4px 4px #979797;
 }
+.service-detail-item::hover {
+    transform: scale(1.15);
+}
+
+.service-detail-item:hover img {
+    filter: grayscale(0);
+}
 
 .service-detail-item img {
     width: 100%;
-
+    filter: grayscale(1);
 }
+
 
 .service-detail-item h2 {
     padding: 0 16px;
@@ -135,6 +160,20 @@ nav>a {
 .service-detail-item p {
     font-size: 16px;
     padding: 0 16px;
+}
+#contact h1{
+    position: relative;
+
+}
+#contact > h1::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background: url(./images/accent2.svg);
+    left: -20px;
+    top: -10px;
+    z-index:-1;
 }
 
 .contact-detail{
@@ -157,6 +196,10 @@ form h1{
 form button{
     border: none;
     margin: 32px 32px 32px 32px;
+}
+
+form button:hover{
+    cursor:pointer;
 }
 .form-group{
     display:grid;
@@ -203,6 +246,10 @@ form button{
     border-bottom: 1px solid black;
     font-size:20px;
 }
+.input-group input:focus{
+    border-bottom: 2px solid #FFC108;
+}
+
 footer{
     padding: 12px 128px;
     background-color: #FFC108;
