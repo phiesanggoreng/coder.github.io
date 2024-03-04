@@ -1,5 +1,7 @@
 * {
     font-family: "Montserrat";
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 html, body{
     padding:0;
@@ -28,7 +30,9 @@ p {
 section {
     padding: 64px 128px;
 }
-
+img, iframe{
+    width:100%;
+}
 .btn {
     background-color: #FFC108;
     color: white;
@@ -50,10 +54,41 @@ section {
     position: sticky;
     top:0;
     background-color:white;
+    z-index: 5;
 }
+
 
 #header h1 {
     margin: 0;
+    /* animation: flash 1s infinite; */
+    animation: bounceIn 1s;
+}
+@keyframes bounceIn{
+    0%{
+        filter:opacity(0);
+        transform: translateY(-20px);
+    }
+    35%{
+        filter:opacity(0.25);
+        transform:translateY(0);
+
+    }
+    70%{
+        filter:opacity(0.5);
+        transform:translateY(-10px);
+    }
+    100%{
+        filter:opacity(1);
+        transform:translateY(0);
+    }
+}
+@keyframes flash{
+    from{
+        filter: opacity(0);
+    }
+    to{
+        filter: opacity (1);
+    }
 }
 
 #landing {
@@ -70,6 +105,7 @@ section {
 #landing>div {
     width: 50%;
 }
+
 
 nav>a {
     margin-left: 12px;
@@ -182,6 +218,9 @@ nav>a:hover{
     margin-top:72px;
     column-gap: 64px;
 }
+.contact-detail > div, contact-detail > form{
+    width: 50%;
+}
 form {
     display:flex;
     flex-direction:column;
@@ -266,4 +305,55 @@ footer p{
 .social-icon{
     display:flex;
     gap:32px;
+}
+@media only screen and (max-width:1200px){
+    .service-detail{
+        gap: 24px;
+    }
+    .contact-detail{
+        gap: 24px;
+    }
+    .form-group{
+        display:flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 992px){
+    #header, #footer{
+        padding: 16px 32px;
+
+    }
+    section{
+        padding: 64px 32px;
+    }
+    #landing{
+        flex-direction:column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #landing > div {
+        width: 100%;
+    }
+    #about{
+        flex-direction:column;
+        text-align:center;
+        justify-content:center;
+        align-items:center;
+    }
+    #about > div{
+        width:100%;
+    }
+    .service-detail{
+        gap: 16px;
+    }
+    .contact-detail{
+        flex-direction:column;
+        justify-content:center;
+        aligm-items:center;
+        roe-gap:64px;
+    }
+    .contact-detail form, contact-detail > div {
+        width: 100%
+    }
 }
